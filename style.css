@@ -1,0 +1,875 @@
+/* =========================================
+   VARIÁVEIS DE DESIGN (Paleta Premium)
+   ========================================= */
+:root {
+    --bg-navy: #0A1128;
+    --bg-navy-light: #162242;
+    --gold: #EAB308;
+    --gold-light: #FDE047;
+    --text-white: #F8FAFC;
+    --text-gray: #94A3B8;
+}
+
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-navy);
+    color: var(--text-white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center { text-align: center; }
+
+/* =========================================
+   SEÇÃO 1: HERO
+   ========================================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0 40px;
+    overflow: hidden;
+}
+
+/* O brilho dourado dinâmico atrás do texto */
+.glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vw;
+    max-width: 700px;
+    max-height: 700px;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, rgba(10, 17, 40, 0) 70%);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2; /* Fica por cima do brilho */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.text-gold-gradient {
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(234, 179, 8, 0.4);
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* O Botão Dourado de Alta Conversão */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--gold), #d4a007);
+    color: var(--bg-navy);
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 40px rgba(234, 179, 8, 0.7);
+}
+
+.cta-button i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+    transform: translateX(5px); 
+}
+
+/* =========================================
+   SEÇÃO 2: ENTREGÁVEIS (Estilo Checklist)
+   ========================================= */
+.deliverables-checklist {
+    padding: 100px 0;
+    background-color: var(--bg-navy);
+    position: relative;
+    z-index: 2;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.checklist-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- Imagem Mockup --- */
+.mockup-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.mockup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.2) 0%, rgba(10, 17, 40, 0) 70%);
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+/* --- Lista de Benefícios --- */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li:hover {
+    background: linear-gradient(90deg, rgba(234, 179, 8, 0.05) 0%, transparent 100%);
+    padding-left: 15px;
+    border-radius: 8px;
+}
+
+.benefits-list i {
+    font-size: 32px;
+    color: var(--gold);
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.4));
+}
+
+.benefits-list span {
+    font-size: 1.15rem;
+    color: var(--text-white);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.mt-12 {
+    margin-top: 48px;
+}
+
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 32px; 
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   SEÇÃO 3: AUTORIDADE (Quem é o Treinador)
+   ========================================= */
+.authority {
+    padding: 100px 0;
+    background-color: var(--bg-navy-light); /* Fundo um pouco mais claro para destacar da secção anterior */
+    position: relative;
+    overflow: hidden;
+}
+
+.authority-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- Estilos da Imagem --- */
+.authority-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.authority-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    border: 2px solid rgba(234, 179, 8, 0.3);
+    box-shadow: 0 0 35px rgba(234, 179, 8, 0.15);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: linear-gradient(135deg, var(--gold), #d4a007);
+    color: var(--bg-navy);
+    padding: 16px 24px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border: 4px solid var(--bg-navy-light);
+}
+
+.exp-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.exp-text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+/* --- Estilos do Texto --- */
+.authority-text {
+    width: 100%;
+}
+
+.authority-text p {
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* Cards menores de estatísticas */
+.authority-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(10, 17, 40, 0.4);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item i {
+    font-size: 32px;
+    color: var(--gold);
+}
+
+.stat-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 4px;
+}
+
+.stat-item span {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* =========================================
+   SEÇÃO 4: RESULTADOS (Carrossel Infinito)
+   ========================================= */
+.results {
+    padding: 100px 0 60px;
+    background-color: var(--bg-navy);
+    overflow: hidden;
+}
+
+/* Contentor do Carrossel */
+.carousel-container {
+    width: 100%;
+    margin-top: 60px;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito esfumado nas laterais para um visual de luxo */
+.carousel-container::before,
+.carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Deixa o rato clicar por baixo */
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-navy) 0%, transparent 100%);
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-navy) 0%, transparent 100%);
+}
+
+/* A Pista que se move */
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    /* A animação dura 40s. Se tiver 28 fotos no total, pode aumentar para 60s para ir mais devagar */
+    animation: scrollCarousel 40s linear infinite; 
+}
+
+/* O Segredo de UX: Pausa a animação quando o utilizador quer ver melhor */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* Estilo de cada Foto */
+.carousel-slide {
+    width: 280px; /* Tamanho no Telemóvel */
+    flex-shrink: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Efeito Premium no Hover (Passar o rato) */
+.carousel-slide:hover {
+    transform: scale(1.03) translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(234, 179, 8, 0.2);
+    z-index: 10;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4/5; /* Mantém a proporção de foto de Instagram */
+}
+
+/* A Animação Infinita (Move exatamente metade da pista, onde começa a repetição) */
+@keyframes scrollCarousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* =========================================
+   SEÇÃO 5: PLANOS E SERVIÇOS (A Oferta)
+   ========================================= */
+.pricing {
+    padding: 100px 0;
+    background-color: var(--bg-navy-light); /* Alternância de cor de fundo */
+    position: relative;
+    z-index: 2;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+/* O Cartão Base */
+.pricing-card {
+    background: rgba(10, 17, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(234, 179, 8, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* O Cartão Premium (Destaque) */
+.pricing-card.premium {
+    background: linear-gradient(180deg, rgba(22, 34, 66, 0.9) 0%, rgba(10, 17, 40, 0.9) 100%);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 30px rgba(234, 179, 8, 0.15);
+}
+
+.pricing-card.premium:hover {
+    box-shadow: 0 20px 50px rgba(234, 179, 8, 0.25);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), #d4a007);
+    color: var(--bg-navy);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 24px;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(234, 179, 8, 0.3);
+}
+
+/* Cabeçalho do Cartão */
+.card-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.card-header p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Lista de Vantagens */
+.card-features {
+    flex-grow: 1; /* Empurra o botão para baixo */
+    margin-bottom: 40px;
+}
+
+.card-features ul {
+    list-style: none;
+}
+
+.card-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.card-features li i {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.card-features li span {
+    color: var(--text-white);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Botões do Cartão */
+.card-action {
+    text-align: center;
+}
+
+.card-action .cta-button {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Botão Secundário (Apenas Borda) */
+.cta-button.outline {
+    background: transparent;
+    border: 2px solid rgba(234, 179, 8, 0.5);
+    color: var(--gold);
+    box-shadow: none;
+}
+
+.cta-button.outline:hover {
+    background: rgba(234, 179, 8, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   SEÇÃO 6: FAQ (Acordeão)
+   ========================================= */
+.faq {
+    padding: 100px 0;
+    background-color: var(--bg-navy);
+    position: relative;
+    z-index: 2;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.faq-item {
+    background: rgba(10, 17, 40, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(234, 179, 8, 0.3);
+}
+
+/* Estado Ativo (Pergunta Aberta) */
+.faq-item.active {
+    border-color: var(--gold);
+    background: rgba(10, 17, 40, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    gap: 16px;
+}
+
+.faq-question i {
+    color: var(--gold);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Roda a setinha quando abre */
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* O Truque do Grid para o Acordeão Suave */
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.faq-item.active .faq-answer {
+    grid-template-rows: 1fr; /* Expande para o tamanho do conteúdo */
+}
+
+.faq-answer-inner {
+    overflow: hidden; /* Oculta o conteúdo enquanto está fechado */
+}
+
+.faq-answer p {
+    padding: 0 24px 24px;
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   SEÇÃO 7: RODAPÉ PREMIUM (Fundação Mobile)
+   ========================================= */
+.footer {
+    /* Um azul quase preto para dar peso e encerrar a página com elegância */
+    background-color: #030614; 
+    padding: 100px 0 40px;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Bloco 1: CTA Final --- */
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px; /* Respiro gigante antes da linha divisória */
+}
+
+.footer-cta .section-title {
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.footer-cta .cta-wrapper {
+    margin-top: 32px;
+}
+
+/* --- Linha Divisória --- */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    /* Linha que desvanece nas pontas e brilha a ouro no centro */
+    background: linear-gradient(90deg, transparent 0%, rgba(234, 179, 8, 0.4) 50%, transparent 100%);
+    margin-bottom: 60px;
+}
+
+/* --- Bloco 2: Marca e Redes (Mobile: Empilhado e Centrado) --- */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px; /* Espaço entre a marca e as redes sociais */
+    margin-bottom: 60px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.brand-description {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Botões das Redes Sociais */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(22, 34, 66, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.social-link:hover {
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-6px) scale(1.05); /* Salto elegante */
+    box-shadow: 0 15px 25px rgba(234, 179, 8, 0.2);
+}
+
+/* --- Bloco 3: Assinatura (Mobile: Empilhado e Centrado) --- */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha muito subtil a separar */
+}
+
+.dev-signature i {
+    color: var(--gold);
+    margin: 0 4px;
+    filter: drop-shadow(0 0 5px rgba(234,179,8,0.5)); /* Brilho no raio */
+}
+
+.dev-signature strong {
+    color: var(--text-white);
+    letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+    
+    /* =========================================
+       SEÇÃO 2: ENTREGÁVEIS (A Correção em Grid)
+       ========================================= */
+    .benefits-list span { 
+        font-size: 1.25rem; 
+    }
+    .checklist-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+    .mockup-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3; 
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .benefits-list {
+        grid-column: 2 / 3; 
+    }
+    .checklist-content .mt-12 {
+        grid-column: 2 / 3;
+        text-align: left;
+        margin-top: 32px;
+    }
+
+    /* =========================================
+       SEÇÃO 3: AUTORIDADE (Intacto)
+       ========================================= */
+    .authority-content {
+        flex-direction: row;
+        gap: 80px;
+        align-items: center;
+    }
+    .authority-image-wrapper { flex: 1; }
+    .authority-text { flex: 1; }
+    
+    .authority-stats {
+        flex-direction: row;
+    }
+    .stat-item { flex: 1; }
+
+    /* =========================================
+       SEÇÃO 5: PLANOS E SERVIÇOS (Intacto)
+       ========================================= */
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center; 
+    }
+    .pricing-card.premium {
+        transform: scale(1.05); 
+        z-index: 10;
+    }
+    .pricing-card.premium:hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+}
+
+/* =========================================
+   MEDIA QUERIES (Ajustes para Desktop)
+   ========================================= */
+@media (min-width: 768px) {
+    .badge { font-size: 0.85rem; }
+    .hero-title { font-size: 3.5rem; max-width: 900px; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .cta-button { font-size: 1.1rem; padding: 20px 40px; }
+
+.carousel-container::before,
+    .carousel-container::after {
+        width: 200px;
+    }
+    .carousel-slide { 
+        width: 350px; 
+    }
+
+.footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+}
